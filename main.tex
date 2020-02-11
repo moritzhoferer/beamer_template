@@ -1,0 +1,131 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+%font sizes: 10pt, 11pt, and 12pt
+%slide ratio: 169, 32, 43, and 54
+% add 'handout' for a handout to print
+\mode<presentation>
+{
+	\usetheme{default}      % save ink
+	\usefonttheme{default}  % or try serif, structurebold, ...
+	\useinnertheme{circles} %rectangles, circles, inmargin, rounded
+	
+	\definecolor{ethBlue}{RGB}{31, 64, 122} % ETH Blue (primary) 
+	\usecolortheme[named=ethBlue]{structure}
+	
+	\setbeamertemplate{navigation symbols}{} % Turn of navigation symbols in the bottom right corner
+	
+	% Footer: It's not nice, but you can add a footer if you want
+	\setbeamertemplate{footline}[text line]{%
+		\parbox{\linewidth}{\vspace*{-9pt} \textcolor{ethBlue}{\insertshorttitle \hfill\insertshortauthor\hfill\insertpagenumber}}
+		}	
+}
+
+\newcommand{\newsection}[1]{
+	\section{#1}
+	% uncomment the following lines to add an extera slide in the begin of every section to show the agenda with the next section title highlighted
+	\begin{frame}%{Agenda}
+		\tableofcontents[currentsection]
+	\end{frame}
+} 
+
+\usefonttheme[onlymath]{serif}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsbsy}
+\usepackage{scrextend}
+\usepackage[authoryear,round]{natbib}
+\usepackage{lmodern}
+\usepackage{accents}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fontawesome}
+
+%\usepackage{fancybox}
+%\usepackage{tikz}
+%\usepackage{makecell}
+%\usepackage{adjustbox}
+%\usepackage{tabularx}
+%\usepackage{caption}
+
+% using Windows and MikTex, uncomment the following 3 line if you use the package "caption" or "subfig"
+%\makeatletter
+%\let\@@magyar@captionfix\relax
+%\makeatother
+
+% uses symbols instead of numbers for \footnote{text}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\mailto}[1]{\href{mailto:#1}{#1}}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{proposition}{Proposition}
+
+\title[Short title]{Long title}
+% respect the lexiographic order!
+\author[
+	%short names for the footer
+	Gersbach, Surname1,	Surname2
+]{
+	% long name for the title slide
+	Hans Gersbach\inst{1}\footnote{\mailto{hgersbach@ethz.ch}} \and
+	Name1 Surname1\inst{1} \and
+	Name2 Surname2\inst{2}
+}
+\institute[MIP, other abbreviation]{
+	\inst{1} Chair of Macroeconomics: Innovation and Policy at ETH Zurich \and
+	\inst{2} Other institution
+}
+\date{\today}
+
+\begin{document}
+	
+\begin{frame}
+	\thispagestyle{empty}
+	\titlepage
+\end{frame}
+
+
+\begin{frame}{Agenda}
+	\tableofcontents
+\end{frame}
+
+\newsection{Introduction}
+\begin{frame}{Introduction}
+	Start with some bullet points:
+	\begin{itemize}
+		\item First, ...
+		\item Second, ...
+	\end{itemize}
+\end{frame}
+
+\newsection{Model}
+\begin{frame}{Model}
+	Start with some bullet points:
+	\begin{itemize}
+		\item First, ...
+		\item Second, ...
+	\end{itemize}
+	All important mathematical numbers in one formula
+	\begin{eqnarray*}
+		\exp\{-i\pi\} + 1 = 0.
+	\end{eqnarray*}
+	More text, ...
+	\begin{definition}
+		Content...
+	\end{definition}
+\end{frame}
+
+\newsection{Analysis}
+\begin{frame}{Analysis}
+	Content...
+	\begin{theorem}
+		Content...
+	\end{theorem}
+\end{frame}
+
+\newsection{Conclusion}
+\begin{frame}{Conclusion}
+	Content...
+\end{frame}
+\end{document}
