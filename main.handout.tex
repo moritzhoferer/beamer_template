@@ -1,0 +1,11 @@
+\documentclass[11pt, aspectratio=141, handout]{beamer}
+\usepackage{pgfpages}
+\pgfpagesuselayout{4 on 1}[ a4paper, border shrink=5mm, landscape]
+\setbeameroption{show notes} % Comment this out to have the just 4 slides per page.
+\setbeamertemplate{note page}{\insertnote}
+
+\setbeamertemplate{footline}[text line]{%
+	\parbox{\linewidth}{\vspace*{-9pt} \centering \textcolor{mipBlue}{\insertpagenumber}}
+}	
+
+\input{main.tex}

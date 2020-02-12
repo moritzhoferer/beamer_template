@@ -1,30 +1,25 @@
-\documentclass[12pt,aspectratio=169]{beamer}
-%font sizes: 10pt, 11pt, and 12pt
-%slide ratio: 169, 32, 43, and 54
-% add 'handout' for a handout to print
-\mode<presentation>
-{
-	\usetheme{default}      % save ink
-	\usefonttheme{default}  % or try serif, structurebold, ...
-	\useinnertheme{circles} %rectangles, circles, inmargin, rounded
-	
-	\definecolor{ethBlue}{RGB}{31, 64, 122} % ETH Blue (primary) 
-	\usecolortheme[named=ethBlue]{structure}
-	
-	\setbeamertemplate{navigation symbols}{} % Turn of navigation symbols in the bottom right corner
-	
-	% Footer: It's not nice, but you can add a footer if you want
-	\setbeamertemplate{footline}[text line]{%
-		\parbox{\linewidth}{\vspace*{-9pt} \textcolor{ethBlue}{\insertshorttitle \hfill\insertshortauthor\hfill\insertpagenumber}}
-		}	
-}
+\usetheme{default}      % save ink
+\usefonttheme{default}  % or try serif, structurebold, ...
+\useinnertheme{circles} %rectangles, circles, inmargin, rounded
+
+\definecolor{mipBlue}{RGB}{0, 105, 180} % ETH Blue (primary) 
+\usecolortheme[named=mipBlue]{structure}
+
+\setbeamertemplate{navigation symbols}{} % Turn of navigation symbols in the bottom right corner
+
+% Footer: It's not nice, but you can add a footer if you want
+%\setbeamertemplate{footline}[text line]{%
+%	\parbox{\linewidth}{\vspace*{-9pt} \textcolor{mipBlue}{\insertshorttitle \hfill\insertshortauthor\hfill\insertpagenumber}}
+%}	
+
+\newcommand{\notesframe}[1]{\note{\textbf{Notes}:\\ #1}}
 
 \newcommand{\newsection}[1]{
 	\section{#1}
 	% uncomment the following lines to add an extera slide in the begin of every section to show the agenda with the next section title highlighted
-	\begin{frame}%{Agenda}
-		\tableofcontents[currentsection]
-	\end{frame}
+%	\begin{frame}%{Agenda}
+%		\tableofcontents[currentsection]
+%	\end{frame}
 } 
 
 \usefonttheme[onlymath]{serif}
@@ -62,10 +57,10 @@
 \newtheorem{proposition}{Proposition}
 
 \title[Short title]{Long title}
-% respect the lexiographic order!
+% respect the lexicographic order!
 \author[
-	%short names for the footer
-	Gersbach, Surname1,	Surname2
+%short names for the footer
+Gersbach, Surname1,	Surname2
 ]{
 	% long name for the title slide
 	Hans Gersbach\inst{1}\footnote{\mailto{hgersbach@ethz.ch}} \and
@@ -79,16 +74,18 @@
 \date{\today}
 
 \begin{document}
+
+
 	
 \begin{frame}
 	\thispagestyle{empty}
 	\titlepage
 \end{frame}
+\notesframe{Read the \texttt{beamer} documentation at \url{http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}.}
 
-
-\begin{frame}{Agenda}
-	\tableofcontents
-\end{frame}
+%\begin{frame}{Agenda}
+%	\tableofcontents
+%\end{frame}
 
 \newsection{Introduction}
 \begin{frame}{Introduction}
@@ -98,6 +95,13 @@
 		\item Second, ...
 	\end{itemize}
 \end{frame}
+\notesframe{
+	\begin{itemize}
+		\item Note 1
+		\item Note 2
+	\end{itemize}
+
+}
 
 \newsection{Model}
 \begin{frame}{Model}
@@ -115,6 +119,13 @@
 		Content...
 	\end{definition}
 \end{frame}
+\notesframe{
+	\begin{itemize}
+		\item Note 1
+		\item Note 2
+	\end{itemize}
+	
+}
 
 \newsection{Analysis}
 \begin{frame}{Analysis}
@@ -123,9 +134,21 @@
 		Content...
 	\end{theorem}
 \end{frame}
+\notesframe{
+	\begin{itemize}
+		\item Note 1
+		\item Note 2
+	\end{itemize}
+}
 
 \newsection{Conclusion}
 \begin{frame}{Conclusion}
 	Content...
 \end{frame}
+\notesframe{
+	\begin{itemize}
+		\item Note 1
+		\item Note 2
+	\end{itemize}	
+}
 \end{document}
