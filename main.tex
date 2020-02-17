@@ -12,12 +12,10 @@
 %	\parbox{\linewidth}{\vspace*{-9pt} \textcolor{mipBlue}{\insertshorttitle \hfill\insertshortauthor\hfill\insertpagenumber}}
 %}	
 
-\newcommand{\notesframe}[1]{\note{\textbf{Notes}:\\ #1}}
-
 \newcommand{\newsection}[1]{
 	\section{#1}
 	% uncomment the following lines to add an extera slide in the begin of every section to show the agenda with the next section title highlighted
-%	\begin{frame}%{Agenda}
+%	\begin{frame}<handout:0>%{Agenda}
 %		\tableofcontents[currentsection]
 %	\end{frame}
 } 
@@ -74,18 +72,19 @@ Gersbach, Surname1,	Surname2
 \date{\today}
 
 \begin{document}
-
-
 	
 \begin{frame}
 	\thispagestyle{empty}
 	\titlepage
 \end{frame}
-\notesframe{Read the \texttt{beamer} documentation at \url{http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}.}
+\note{
+	Read the \texttt{beamer} documentation at \url{http://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}.
+}
 
-%\begin{frame}{Agenda}
-%	\tableofcontents
-%\end{frame}
+\begin{frame}<handout:0>{Agenda}
+	\tableofcontents
+\end{frame}
+% No note here as the frame is excluded from the handout
 
 \newsection{Introduction}
 \begin{frame}{Introduction}
@@ -95,12 +94,18 @@ Gersbach, Surname1,	Surname2
 		\item Second, ...
 	\end{itemize}
 \end{frame}
-\notesframe{
-	\begin{itemize}
-		\item Note 1
-		\item Note 2
-	\end{itemize}
-
+\note{
+%	\begin{itemize}
+%		\item Note 1
+%		\item Note 2
+%	\end{itemize}
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
+\begin{itemize}
+	\item Cras dapibus. 
+	\item Vivamus elementum semper nisi.
+	\item Aenean vulputate eleifend tellus.
+\end{itemize}
+Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.
 }
 
 \newsection{Model}
@@ -119,7 +124,7 @@ Gersbach, Surname1,	Surname2
 		Content...
 	\end{definition}
 \end{frame}
-\notesframe{
+\note{
 	\begin{itemize}
 		\item Note 1
 		\item Note 2
@@ -134,7 +139,7 @@ Gersbach, Surname1,	Surname2
 		Content...
 	\end{theorem}
 \end{frame}
-\notesframe{
+\note{
 	\begin{itemize}
 		\item Note 1
 		\item Note 2
@@ -145,7 +150,7 @@ Gersbach, Surname1,	Surname2
 \begin{frame}{Conclusion}
 	Content...
 \end{frame}
-\notesframe{
+\note{
 	\begin{itemize}
 		\item Note 1
 		\item Note 2

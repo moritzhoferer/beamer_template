@@ -1,8 +1,55 @@
-\documentclass[11pt, aspectratio=141, handout]{beamer}
+\documentclass[12pt, aspectratio=169, handout]{beamer}
 \usepackage{pgfpages}
-\pgfpagesuselayout{4 on 1}[ a4paper, border shrink=5mm, landscape]
+\pgfpagesdeclarelayout{4 on 1 new}
+{
+	\edef\pgfpageoptionheight{\the\paperheight} 
+	\edef\pgfpageoptionwidth{\the\paperwidth}
+	\edef\pgfpageoptionborder{0pt}
+}
+{
+	\pgfpagesphysicalpageoptions
+	{
+		logical pages=4,%
+		physical height=\pgfpageoptionheight,%
+		physical width=\pgfpageoptionwidth%
+	}
+	\pgfpageslogicalpageoptions{1}
+	{%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.398\pgfphysicalheight,%
+		center=\pgfpoint{.25\pgfphysicalwidth}{.801\pgfphysicalheight}%
+	}%
+	\pgfpageslogicalpageoptions{3}
+	{%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.398\pgfphysicalheight,%
+		center=\pgfpoint{.75\pgfphysicalwidth}{.801\pgfphysicalheight}%
+	}%
+	\pgfpageslogicalpageoptions{2}
+	{%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.602\pgfphysicalheight,%
+		center=\pgfpoint{.25\pgfphysicalwidth}{.301\pgfphysicalheight}%
+	}%
+	\pgfpageslogicalpageoptions{4}
+	{%
+		border shrink=\pgfpageoptionborder,%
+		resized width=.5\pgfphysicalwidth,%
+		resized height=.602\pgfphysicalheight,%
+		center=\pgfpoint{.75\pgfphysicalwidth}{.301\pgfphysicalheight}%
+	}%
+}
+
+% USE FOR HANDOUT WITH NOTES (next 3 lines)
+\pgfpagesuselayout{4 on 1 new}[ a4paper, border shrink=2.5mm, landscape]
 \setbeameroption{show notes} % Comment this out to have the just 4 slides per page.
-\setbeamertemplate{note page}{\insertnote}
+\setbeamertemplate{note page}{\textbf{Notes:}\\ \vspace*{-12pt} \insertnote}
+
+% USE FOR 4 SLIDES ON ONE PAGE (next line)
+%\pgfpagesuselayout{4 on 1}[ a4paper, border shrink=5mm, landscape]
 
 \setbeamertemplate{footline}[text line]{%
 	\parbox{\linewidth}{\vspace*{-9pt} \centering \textcolor{mipBlue}{\insertpagenumber}}
